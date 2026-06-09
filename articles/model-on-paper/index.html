@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Let's train an ML model using pen and paper!</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Sanyam Asthana's personal internet space">
+        <meta name="keywords" content="Sanyam, Asthana, NLP, AI, ML, Computer, Systems, Philosophy">
+        <meta name="author" content="Sanyam Asthana">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body {
+                margin-inline: auto;
+                max-width: 75ch;
+                padding-inline: 1.25rem;
+            }
+            img {
+                display: block;
+                max-width: 50%;
+                margin-inline: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Let's train an ML model using pen and paper!</h1>
+                <h2>Sanyam Asthana, 10th June 2026</h2>
+            </header>
+
+            <hr>
+
+            <nav>
+                <a href="../../index.html">Home</a>
+                <a href="../../articles.html">Articles</a>
+            </nav>
+
+            <hr>
+
+            <section>
+                <h3>But, why?</h3>
+
+                <p>Understanding Machine Learning can be overwhelming for a beginner, especially when huge walls of math are thrown directly at them. The usual trajectory of learning goes like this: You read about an ML algorithm, you read about the math related to it, and then you start using it in code.</p>
+
+                <p>Let's slow down a bit and return to the almighty sword, the pen. You see, <b>a computer is nothing but a highly glorified calculator</b>. It does no magic except calculating faster than you could ever do. So, if a computer can train a model, so can you, albeit a lot slower. But doing so completely eradicates any holes you had in the understanding of the procedure, and is highly worth doing in my opinion.</p>
+            </section>
+
+            <section>
+                <h3>Course of action</h3>
+
+                <p>We are going to "train" a linear regression model in this article. Don't worry if you are unaware of it. It is arguably the simplest form of ML algorithm, but everything else just builds on top of it, and the basic idea you are going to apply here, is going to be largely the same elsewhere.</p>
+
+                <p>If you can, get a pen and a notebook, as it will be rewarding to follow along. Anyways, I am ready with my sheets and my Uni Jetstream (great pen) and here we go!</p>
+            </section>
+
+            <section>
+                <h3>Linear Regression</h3>
+
+                <p>If you are already aware of Linear Regression, you can skip <a href="#time-for-paper">ahead</a>.</p>
+
+                <p>A linear regression model is simply a line (hence "linear") in a multi-dimensional space, which is as near as many data points as it can get. Speaking formally, the sum of the absolute distance (or squared distance) between the data points and the model "line" is minimum.</p>
+
+                <p>Now, it is not hard to visualise that if all the data points of the dataset are collinear (i.e. they lie on the same line), an ideal linear regression model will have zero absolute distance to any data point. However, real data is almost never perfectly linear, and there are often irregularities. Our task is to draw a line in the multi-dimensional graph containing the data points such that it is as close to the points as it can get.</p>
+
+                <p>We use Linear Regression when we suspect that the relation between the variable to be predicted has a linear relationship with the variables it is to be predicted from. For example, the distance a car can travel presumably has a linear relationship with the amount of fuel it has. If we have data regarding different occasions of amount of fuel V/S distance travelled, we could use this data to train a linear regression model, one which predicts how much a car can travel, given the amount of fuel.</p>
+
+                <p>A general representation of a linear regression model would be:<br><br>
+                <code>y = w<sub>1</sub>x<sub>1</sub> +  w<sub>2</sub>x<sub>2</sub> + ... +  w<sub>n</sub>x<sub>n</sub> + b</code><br><br>
+                Here, <code>y</code> is the variable to be predicted. <code>x<sub>i</sub></code> are the different variables using which <code>y</code> is to be predicted. <code>w<sub>i</sub></code> are the coefficients of each <code>x<sub>i</sub></code>, called the weights. Indeed, they define the weightage (contribution) of each <code>x<sub>i</sub></code> towards <code>y</code>. At last, <code>b</code> is a constant added to the expression, called the bias, which is independent of any variable. This equation when plotted in an n-dimensional space, gives a line.</p>
+
+                <p>When we are training the model, we are essentially changing the values of the weights and the biases (like turning knobs) so that the expression produces a satisfactory value of <code>y</code> for each set of corresponding <code>x<sub>i</sub></code>.
+            </section>
+
+            <section id="time-for-paper">
+                <h3>Time for paper!</h3>
+
+                <p>Let us first define a "dataset" which we are going to "train" our model on. Let's define our dataset to have two points, P(1, 2) and Q(2, 4).</p>
+
+                <img src="dataset.jpg" alt="The two points plotted on a 2D coordinate system">
+
+                <p>And yes, this article is going to have actual photographs of my sheets, just to demonstrate that all of this can indeed be done on pen and paper.</p>
+
+                <p>I have plotted both the points on a graph in the above image. The aim of our model is to make a line which passes, or nearly passes through those two points. Now, the dataset only consists of two points, and any two points are always collinear, so an ideal model should always produce a perfect output, but training a model seldom gives a perfect output even with perfectly linear data.</p>
+
+                <p>In our coordinate tuples, the <code>y</code> coordinate is the one the model has to predict, and the <code>x</code> coordinate is the one the model has to use to predict. Since our target variable only depends on one variable (i.e. <code>x</code>), the expression of the model is quite simply:</p><br><br>
+
+                <code>y = mx + b</code><br><br>
+
+                <p>So, we just have to tune two parameters, <code>m</code> and <code>b</code>.</p>
+
+                <p>So, ideally, we would want our model to predict a value of 2, when 1 is input, and a value of 4, when 2 is input.</p>
+            </section>
+
+            <section>
+                <h3>Initializing the parameters</h3>
+
+                <p>To start tuning <code>m</code> and <code>b</code>, we have to assign some values to them initially. Let us set both to be 0.</p>
+
+                <img src="initialization.jpg" alt="Model equation along with initialized values of m and b">
+            </section>
+
+            <section>
+                <h3>Defining the loss</h3>
+
+                <p>Before we start training our model, we have to define a method to measure how off our model is from the reality, so that we can improve upon it. This measure of "off-ness" from reality is called the loss. There are several ways of defining loss, but I define loss in this article as:</p>
+
+                <img src="loss.jpg" alt="Expression of the loss">
+
+                <p>Here, <code>L</code> is the loss, <code>ŷ</code> is the value predicted by our model, and <code>y</code> is the actual value in reality. To train an ML model, <b>our goal is to minimise this loss</b>, as lower values of the loss convey that the difference between the model outputs and the reality is little.</p>
+            </section>
+
+            <section>
+                <h3>First forward pass</h3>
+
+                <p>Calculating the model output from the data inputs base on the current state of the model is called a forward pass. Let us process our first point, P through our model and see what output we get:</p>
+
+                <img src="firstforward.jpg" alt="First forward pass">
+
+                <p>Since we set both of the parameters to 0, our output is 0. We can surely do better than that. It is obvious that we need to change the values of <code>m</code> and <code>b</code>, but how exactly, and by what amount?</p>
+            </section>
+
+            <section>
+                <h3>Gradient Descent</h3>
+
+                <p>Gradient Descent is at the heart of machine learning. It is the process by which weights are adjusted to more accurately represent the reality. Despite the complex-sounding name, it really is just a partial derivative of a value with respect to the other, and the updation of the value depending on the partial derivative result.</p>
+
+                <p>To train an ML model, we need to minimize the loss. But how exactly are we going to minimize the loss? Let us first see what the loss consists of:</p>
+
+                <img src="loss.jpg" alt="Loss expression">
+
+                <p>We see that the loss depends on <code>ŷ</code>, which in turn depends on <code>m</code> and <code>b</code>. So, we need to change the values of <code>m</code> and <code>b</code> such that the loss decreases.</p>
+
+                <p>To find out if we need to increase or decrease the parameters, we calculate the partial derivative of the loss with respect to both the parameters. The partial derivative tells us how much a quantity changes upon changing a quantity it depends on. In other words, calculating the partial derivatives of the loss with respect to both the parameters will enable us to know how much the loss depends on each of the parameters.</p>
+
+                <p>We use the chain rule to calculate the partial derivatives:</p>
+
+                <img src="mderivative1.jpg" alt="Calculating partial derivative of L wrt m">
+                <img src="mderivative2.jpg" alt="Partial derivative of L wrt m">
+
+                <p>Similarly, for b:</p>
+
+                <img src="bderivative.jpg" alt="Partial derivative of L wrt b">
+
+                <p>Now that we have expressions to calculate the dependence of L on both the parameters, we can actually go ahead and calculate the gradients. The error <code>e</code> is the difference between our model's output (0) and the reality (2):</p>
+
+                <img src="gradcalc.jpg" alt="Calculation of gradients">
+
+                <p>We see that both of the gradients come out to be negative. This means that increasing any of the parameters by a small amount, will decrease the loss by a small amount. So we need to do exactly that! We need to increase the parameters by a bit to bring down the loss. But what do we mean by "a bit"? By how much do we increase the parameters?</p>
+
+                <p>We define the <b>learning rate (α)</b>. Learning rate is the ratio by which we change the parameters based on the gradients. Let us keep α to be 0.1:</p>
+
+                <img src="newm.jpg" alt="Calculating new value of m">
+                <img src="newmcalc.jpg" alt="new value of m">
+
+                <p>We subtract the product from the old value (0) of <code>m</code> because the gradient tells us what add to increase the loss, so we do the opposite and subtract to decrease the loss.</p>
+
+                <p>The learning rate is the most effective when it is a small value, so we don't change the parameters by a lot such that they overshoot. However, smaller values of the learning rate also increase the time taken to train the model, as the parameters change rather slowly. This is a tradeoff the ML engineers have to make.</p>
+
+                <p>We calculate the new value of <code>b</code> in a similar manner:</p>
+
+                <img src="newb.jpg" alt="new value of b">
+
+                <p>The technique of gradient descent we used here is called <b>Stochastic Gradient Descent</b>, which updates each parameter separately. Another technique is <b>Batch Gradient Descent</b>, which calculates gradients for all points at once and updates the parameters accordingly.</p>
+            </section>
+
+            <section>
+                <h3>Second forward pass</h3>
+
+                <p>Till now, we have just processed our first point P. It's time for our second point Q! We do the same steps we did for point P, but this time with our updated parameter values:</p>
+
+                <img src="secondforward.jpg" alt="Second forward pass">
+
+                <p>Calculating the gradient:</p>
+
+                <img src="gradcalc2.jpg" alt="Calculating the gradient">
+
+                <p>Updating the parameters based on the gradients:</p>
+
+                <img src="newbandm.jpg" alt="Updating the parameters based on the gradients">
+            </section>
+
+            <section>
+                <h3>Testing the model</h3>
+
+                <p>What we have just completed is called an <b>Epoch</b>. An epoch is the process of going through the complete dataset once. Bigger models need much more epochs to train, but to keep things simple, we do away with just one epoch.</p>
+
+                <p>We now have our "trained" values of <code>m</code> and <code>b</code>. Let us feed into the model our inputs and see what values we get, starting with point P:</p>
+
+                <img src="presult.jpg" alt="Result for point P">
+
+                <p>Our initial output for point P was 0, and now it is 2.48, which is much closer to the actual value 2. Our previous error was <code>0 - 2 = -2</code>, and now it is:</p>
+
+                <img src="errorp.jpg" alt="Error of calculation of output of point P">
+
+                <p>Which is a massive improvement!</p>
+
+                <p>Doing similarly for point Q:</p>
+
+                <img src="qresult.jpg" alt="Result for point Q">
+
+                <p>We see that the model has flawlessly predicted the exact value 4, giving an error of 0, as compared to the previous error of -4. Marvelous!</p>
+            </section>
+
+            <section>
+                <h3>Conclusion</h3>
+
+                <p>We have successfully "trained" a model on paper! The model can obviously be made more accurate by doing more epochs. The final model "line" on our coordinate system looks something like:</p>
+
+                <img src="modelgraph.jpg" alt="Model line on the coordinate system">
+
+                <p>Which is much better as compared to the initial line, which was the x-axis (<code>m = 0, b = 0</code>). Doing more epochs will push this line further towards point P, making it more accurate overall.</p>
+
+                <p>If you followed along well, you should be proud of what you just did. I am now putting away my sheets and my Uni Jetstream (still great pen).</p>
+            </section>
+        </main>
+    </body>
+</html>

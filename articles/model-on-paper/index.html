@@ -2,11 +2,19 @@
 <html>
     <head>
         <title>Let's train an ML model using pen and paper!</title>
+
         <meta charset="UTF-8">
-        <meta name="description" content="Let's shut the bluff and train an ML model using pen and paper!">
-        <meta name="keywords" content="Machine, Learning, Artificial, Intelligence, Model, Linear, Regression, Paper, Pen, Gradient Descent">
+        <meta name="description" content="A step-by-step first-principles guide to manually training a linear regression model using a pen, paper, a calculator, and Stochastic Gradient Descent.">
+
+        <meta name="keywords" content="Linear Regression by hand, Gradient Descent pen and paper, machine learning first principles, SGD vs Batch Gradient Descent, Sanyam Asthana">
         <meta name="author" content="Sanyam Asthana">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:title" content="Training Linear Regression with Pen and Paper">
+        <meta property="og:description" content="Stop importing libraries. Learn how optimization loops actually mutate parameters by running the calculus manually.">
+        <meta property="og:image" content="model-on-graph.jpg">
+        <meta property="og:url" content="https://sanyam-asthana.vercel.app/articles/linear-regression.html">
+        <meta name="twitter:card" content="summary_large_image">
 
         <style>
             body {
@@ -96,7 +104,7 @@
 
                 <p>To start tuning <code>m</code> and <code>b</code>, we have to assign some values to them initially. Let us set both to be 0.</p>
 
-                <img src="initialization.jpg" alt="Model equation along with initialized values of m and b">
+                <img src="initialization-of-parameters.jpg" alt="Model equation along with initialized values of m and b">
             </section>
 
             <section>
@@ -104,7 +112,7 @@
 
                 <p>Before we start training our model, we have to define a method to measure how off our model is from the reality, so that we can improve upon it. This measure of "off-ness" from reality is called the loss. There are several ways of defining loss, but I define loss in this article as:</p>
 
-                <img src="loss.jpg" alt="Expression of the loss">
+                <img src="expression-for-loss.jpg" alt="Expression of the loss">
 
                 <p>Here, <code>L</code> is the loss, <code>ŷ</code> is the value predicted by our model, and <code>y</code> is the actual value in reality. To train an ML model, <b>our goal is to minimise this loss</b>, as lower values of the loss convey that the difference between the model outputs and the reality is little.</p>
             </section>
@@ -114,7 +122,7 @@
 
                 <p>Calculating the model output from the data inputs based on the current state of the model is called a forward pass. Let us process our first point, P through our model and see what output we get:</p>
 
-                <img src="firstforward.jpg" alt="First forward pass">
+                <img src="first-forward-pass.jpg" alt="First forward pass">
 
                 <p>Since we set both of the parameters to 0, our output is 0. We can surely do better than that. It is obvious that we need to change the values of <code>m</code> and <code>b</code>, but how exactly, and by what amount?</p>
             </section>
@@ -126,7 +134,7 @@
 
                 <p>To train an ML model, we need to minimize the loss. But how exactly are we going to minimize the loss? Let us first see what the loss consists of:</p>
 
-                <img src="loss.jpg" alt="Loss expression">
+                <img src="expression-for-loss.jpg" alt="Loss expression">
 
                 <p>We see that the loss depends on <code>ŷ</code>, which in turn depends on <code>m</code> and <code>b</code>. So, we need to change the values of <code>m</code> and <code>b</code> such that the loss decreases.</p>
 
@@ -134,23 +142,23 @@
 
                 <p>We use the chain rule to calculate the partial derivatives:</p>
 
-                <img src="mderivative1.jpg" alt="Calculating partial derivative of L wrt m">
-                <img src="mderivative2.jpg" alt="Partial derivative of L wrt m">
+                <img src="gradient-for-m-1.jpg" alt="Calculating partial derivative of L wrt m">
+                <img src="gradient-for-m-2.jpg" alt="Partial derivative of L wrt m">
 
                 <p>Similarly, for b:</p>
 
-                <img src="bderivative.jpg" alt="Partial derivative of L wrt b">
+                <img src="gradient-for-b.jpg" alt="Partial derivative of L wrt b">
 
                 <p>Now that we have expressions to calculate the dependence of L on both the parameters, we can actually go ahead and calculate the gradients. The error <code>e</code> is the difference between our model's output (0) and the reality (2):</p>
 
-                <img src="gradcalc.jpg" alt="Calculation of gradients">
+                <img src="gradient-calculation.jpg" alt="Calculation of gradients">
 
                 <p>We see that both of the gradients come out to be negative. This means that increasing any of the parameters by a small amount, will decrease the loss by a small amount. So we need to do exactly that! We need to increase the parameters by a bit to bring down the loss. But what do we mean by "a bit"? By how much do we increase the parameters?</p>
 
                 <p>We define the <b>learning rate (α)</b>. Learning rate is the ratio by which we change the parameters based on the gradients. Let us keep α to be 0.1:</p>
 
-                <img src="newm.jpg" alt="Calculating new value of m">
-                <img src="newmcalc.jpg" alt="new value of m">
+                <img src="new-value-of-m-1.jpg" alt="Calculating new value of m">
+                <img src="new-value-of-m-2.jpg" alt="new value of m">
 
                 <p>We subtract the product from the old value (0) of <code>m</code> because the gradient tells us what to add to increase the loss, so we do the opposite and subtract to decrease the loss.</p>
 
@@ -158,7 +166,7 @@
 
                 <p>We calculate the new value of <code>b</code> in a similar manner:</p>
 
-                <img src="newb.jpg" alt="new value of b">
+                <img src="new-value-of-b.jpg" alt="new value of b">
 
                 <p>The technique of gradient descent we used here is called <b>Stochastic Gradient Descent</b>, which updates each parameter separately. Another technique is <b>Batch Gradient Descent</b>, which calculates gradients for all points at once and updates the parameters accordingly.</p>
             </section>
@@ -168,15 +176,15 @@
 
                 <p>Till now, we have just processed our first point P. It's time for our second point Q! We do the same steps we did for point P, but this time with our updated parameter values:</p>
 
-                <img src="secondforward.jpg" alt="Second forward pass">
+                <img src="second-forward-pass.jpg" alt="Second forward pass">
 
                 <p>Calculating the gradient:</p>
 
-                <img src="gradcalc2.jpg" alt="Calculating the gradient">
+                <img src="gradient-calculation-2.jpg" alt="Calculating the gradient">
 
                 <p>Updating the parameters based on the gradients:</p>
 
-                <img src="newbandm.jpg" alt="Updating the parameters based on the gradients">
+                <img src="new-values-of-m-and-b.jpg" alt="Updating the parameters based on the gradients">
             </section>
 
             <section>
@@ -186,17 +194,17 @@
 
                 <p>We now have our "trained" values of <code>m</code> and <code>b</code>. Let us feed into the model our inputs and see what values we get, starting with point P:</p>
 
-                <img src="presult.jpg" alt="Result for point P">
+                <img src="result-of-point-p.jpg" alt="Result for point P">
 
                 <p>Our initial output for point P was 0, and now it is 2.48, which is much closer to the actual value 2. Our previous error was <code>0 - 2 = -2</code>, and now it is:</p>
 
-                <img src="errorp.jpg" alt="Error of calculation of output of point P">
+                <img src="error-of-point-p.jpg" alt="Error of calculation of output of point P">
 
                 <p>Which is a massive improvement!</p>
 
                 <p>Doing similarly for point Q:</p>
 
-                <img src="qresult.jpg" alt="Result for point Q">
+                <img src="result-of-point-q.jpg" alt="Result for point Q">
 
                 <p>We see that the model has flawlessly predicted the exact value 4, giving an error of 0, as compared to the previous error of -4. Marvelous!</p>
             </section>
@@ -206,7 +214,7 @@
 
                 <p>We have successfully "trained" a model on paper! The model can obviously be made more accurate by doing more epochs. The final model "line" on our coordinate system looks something like:</p>
 
-                <img src="modelgraph.jpg" alt="Model line on the coordinate system">
+                <img src="model-on-graph.jpg" alt="Model line on the coordinate system">
 
                 <p>Which is much better as compared to the initial line, which was the x-axis (<code>m = 0, b = 0</code>). Doing more epochs will push this line further towards point P, making it more accurate overall.</p>
 

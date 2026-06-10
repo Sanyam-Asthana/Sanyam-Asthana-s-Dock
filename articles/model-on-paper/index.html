@@ -42,7 +42,7 @@
 
                 <p>Understanding Machine Learning can be overwhelming for a beginner, especially when huge walls of math are thrown directly at them. The usual trajectory of learning goes like this: You read about an ML algorithm, you read about the math related to it, and then you start using it in code.</p>
 
-                <p>Let's slow down a bit and return to the almighty sword, the pen. You see, <b>a computer is nothing but a highly glorified calculator</b>. It does no magic except calculating faster than you could ever do. So, if a computer can train a model, so can you, albeit a lot slower. But doing so completely eradicates any holes you had in the understanding of the procedure, and is highly worth doing in my opinion.</p>
+                <p>Let's slow down a bit and return to the almighty sword, the pen. You see, <b>a computer is nothing but a highly glorified calculator</b>. It does no magic except calculating faster than you could ever do. So, if a computer can train a model, so can you, albeit a lot slower. But doing so completely fills any gaps you had in the understanding of the procedure, and is highly worth doing in my opinion.</p>
             </section>
 
             <section>
@@ -112,7 +112,7 @@
             <section>
                 <h3>First forward pass</h3>
 
-                <p>Calculating the model output from the data inputs base on the current state of the model is called a forward pass. Let us process our first point, P through our model and see what output we get:</p>
+                <p>Calculating the model output from the data inputs based on the current state of the model is called a forward pass. Let us process our first point, P through our model and see what output we get:</p>
 
                 <img src="firstforward.jpg" alt="First forward pass">
 
@@ -152,7 +152,7 @@
                 <img src="newm.jpg" alt="Calculating new value of m">
                 <img src="newmcalc.jpg" alt="new value of m">
 
-                <p>We subtract the product from the old value (0) of <code>m</code> because the gradient tells us what add to increase the loss, so we do the opposite and subtract to decrease the loss.</p>
+                <p>We subtract the product from the old value (0) of <code>m</code> because the gradient tells us what to add to increase the loss, so we do the opposite and subtract to decrease the loss.</p>
 
                 <p>The learning rate is the most effective when it is a small value, so we don't change the parameters by a lot such that they overshoot. However, smaller values of the learning rate also increase the time taken to train the model, as the parameters change rather slowly. This is a tradeoff the ML engineers have to make.</p>
 

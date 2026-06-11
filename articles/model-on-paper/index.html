@@ -56,6 +56,12 @@
             </section>
 
             <section>
+                <h3>Prerequisites</h3>
+
+                <p>Basic knowledge of differential calculus and partial derivatives.</p>
+            </section>
+
+            <section>
                 <h3>Course of action</h3>
 
                 <p>We are going to "train" a linear regression model in this article. Don't worry if you are unaware of it. It is arguably the simplest form of ML algorithm, but everything else just builds on top of it, and the basic idea you are going to apply here, is going to be largely the same elsewhere.</p>
@@ -117,6 +123,10 @@
                 <img src="expression-for-loss.jpg" alt="Expression of the loss">
 
                 <p>Here, <code>L</code> is the loss, <code>ŷ</code> is the value predicted by our model, and <code>y</code> is the actual value in reality. To train an ML model, <b>our goal is to minimise this loss</b>, as lower values of the loss convey that the difference between the model outputs and the reality is little.</p>
+
+                <p>I use the specific expression for loss as it translates to the "distance between the prediction and reality" perfectly. It calculates the difference between both the values, and then squares them for sign removal.</p>
+
+                <p>Now, one might raise the question, asking whether we can use the absolute value instead of squaring, since both of them have the nature of sign removal. There are two reasons for using the squared loss intead of the absolute value, one of which will be revealed in a later section. The second reason is the penalty. The absolute loss penalizes over each value of error equally, whereas a squared loss exaggerates higher values and diminishes lower values of loss, penalizing more when the model is highly disparate from reality.</p>
             </section>
 
             <section>
@@ -171,6 +181,8 @@
                 <img src="new-value-of-b.jpg" alt="new value of b">
 
                 <p>The technique of gradient descent we used here is called <b>Stochastic Gradient Descent</b>, which updates each parameter separately. Another technique is <b>Batch Gradient Descent</b>, which calculates gradients for all points at once and updates the parameters accordingly.</p>
+
+                <p>Here we also see why absolute loss would have not been a good choice. The derivative of the absolute function is not defined at zero, and we want the derivative to be defined throughout the function to efficiently carry out gradient descent. We used squared loss instead since it's a smooth parabola, which is differentiable everywhere.</p>
             </section>
 
             <section>
@@ -220,7 +232,7 @@
 
                 <p>Which is much better as compared to the initial line, which was the x-axis (<code>m = 0, b = 0</code>). Doing more epochs will push this line further towards point P, making it more accurate overall.</p>
 
-                <p>If you followed along well, you should be proud of what you just did. I am now putting away my sheets and my Uni Jetstream (still great pen).</p>
+                <p>If you followed along well, you should be proud of what you just did. I'd recommend spelling all of this out in code, and seeing how fast a computer does what you just did on paper. I am now putting away my sheets and my Uni Jetstream (still great pen).</p>
             </section>
         </main>
     </body>

@@ -98,11 +98,11 @@
 
                 <p>I have plotted both the points on a graph in the above image. The aim of our model is to make a line which passes, or nearly passes through those two points. Now, the dataset only consists of two points, and any two points are always collinear, so an ideal model should always produce a perfect output, but training a model seldom gives a perfect output even with perfectly linear data.</p>
 
-                <p>In our coordinate tuples, the <code>y</code> coordinate is the one the model has to predict, and the <code>x</code> coordinate is the one the model has to use to predict. Since our target variable only depends on one variable (i.e. <code>x</code>), the expression of the model is quite simply:</p><br><br>
+                <p>In our coordinate tuples, the <code>y</code> coordinate is the one the model has to predict, and the <code>x</code> coordinate is the one the model has to use to predict. Since our target variable only depends on one variable (i.e. <code>x</code>), the expression of the model is quite simply:<br><br>
 
                 <code>y = mx + b</code><br><br>
 
-                <p>So, we just have to tune two parameters, <code>m</code> and <code>b</code>.</p>
+                So, we just have to tune two parameters, <code>m</code> and <code>b</code>.</p>
 
                 <p>So, ideally, we would want our model to predict a value of 2, when 1 is input, and a value of 4, when 2 is input.</p>
             </section>
@@ -126,7 +126,7 @@
 
                 <p>I use the specific expression for loss as it translates to the "distance between the prediction and reality" perfectly. It calculates the difference between both the values, and then squares them for sign removal.</p>
 
-                <p>Now, one might raise the question, asking whether we can use the absolute value instead of squaring, since both of them have the nature of sign removal. There are two reasons for using the squared loss intead of the absolute value, one of which will be revealed in a later section. The second reason is the penalty. The absolute loss penalizes over each value of error equally, whereas a squared loss exaggerates higher values and diminishes lower values of loss, penalizing more when the model is highly disparate from reality.</p>
+                <p>Now, one might raise the question, asking whether we can use the absolute value instead of squaring, since both of them have the nature of sign removal. There are two reasons for using the squared loss instead of the absolute value, one of which will be revealed in a later section. The second reason is the penalty. The absolute loss penalizes over each value of error equally, whereas a squared loss exaggerates higher values and diminishes lower values of loss, penalizing more when the model is highly disparate from reality.</p>
             </section>
 
             <section>
@@ -226,7 +226,7 @@
             <section>
                 <h3>Conclusion</h3>
 
-                <p>We have successfully "trained" a model on paper! The model can obviously be made more accurate by doing more epochs. The final model "line" on our coordinate system looks something like:</p>
+                <p>We have successfully "trained" a model on paper! The model can obviously be made more accurate by doing more epochs, and in practice, models are usually trained with a large number of epochs. The final model "line" on our coordinate system looks something like:</p>
 
                 <img src="model-on-graph.jpg" alt="Model line on the coordinate system">
 

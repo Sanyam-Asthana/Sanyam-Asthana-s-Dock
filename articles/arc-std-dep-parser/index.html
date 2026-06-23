@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Implementing an Arc-Standard Dependency Parser using Neural Networks (Chen and Manning, 2014)</title>
+
+        <meta charset="UTF-8">
+        <meta name="description" content="An article documenting the process of implementing Chen and Manning's Arc-Standard Dependency Parser">
+
+        <meta name="keywords" content="Chen and Mannning, Dependency Parser, Arc-Standard, Neural Networks, NLP">
+        <meta name="author" content="Sanyam Asthana">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta property="og:title" content="An article documenting the process of implementing Chen and Manning's Arc-Standard Dependency Parser">
+        <meta property="og:description" content="An article documenting the process of implementing Chen and Manning's Arc-Standard Dependency Parser">
+        <meta property="og:url" content="https://sanyam-asthana.vercel.app/articles/arc-std-dep-parser/index.html">
+        <meta name="twitter:card" content="summary_large_image">
+
+        <style>
+            body {
+                margin-inline: auto;
+                max-width: 75ch;
+                padding-inline: 1.25rem;
+                line-height: 1.45;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            }
+            img {
+                display: block;
+                max-width: 50%;
+                margin-inline: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>Implementing an Arc-Standard Dependency Parser using Neural Networks (Chen and Manning, 2014)</h1>
+                <h2><a href="../../index.html">Sanyam Asthana</a>, 24th June 2026</h2>
+            </header>
+
+            <hr>
+
+            <section>
+                <h3>What's this?</h3>
+
+                <p>In 2014, Danqi Chen and Christopher D. Manning (Stanford) published <i>"A Fast and Accurate Dependency Parser using Neural Networks"</i>.</p>
+
+                <p>This paper used neural networks to train a dependency parser, based on the arc-standard structure. The original paper can be found <a href="https://nlp.stanford.edu/pubs/emnlp2014-depparser.pdf">here</a>.</p>
+
+                <p>I tried to implement this in Python, and the following is about how it went.</p>
+            </section>
+
+            <section>
+                <h3>Authors' Spec</h3>
+
+                <ol>
+                    <li>The original authors used the Penn English Treebank (PTB) to train the model</li>
+                    <li>They used pre-trained word2vec skip-gram embeddings, trained on massive Google News dataset, containing about 100 billion words.</li>
+                    <li>They got a UAS (Unlabeled Attachment Score) of 91.8% on English.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>My Spec</h3>
+
+                <ol>
+                    <li>I didn't have access to the proprietary Penn English Treebank for free, so I used Universal Dependency (UD) English Treebank instead, which is significantly shorter and more chaotic than PTB.</li>
+                    <li>In the beginning, I used untrained embeddings and trained them along with the model, but later I pivoted to GloVe embeddings.</li>
+                    <li>I got a UAS of.. keep reading :)</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>What really is dependency parsing?</h3>
+
+                <p>In NLP tasks, dependency parsing refers to connecting each word of a body of text to words which depend on it.</p>
+
+                <p>For example, in the phrase "big slippery whack-a-mole" (completely made-up phrase btw), "big" and "slippery" depend on "whack-a-mole", and they serve as <b>noun modifiers</b> i.e., they modify the noun ("whack-a-mole") since they are adjectives.</p>
+
+                <p>There exist many more such relations, and a dependency parser does the painstaking work of labeling and assigning head nodes. Dependency parsing outputs a <b>dependency graph</b> of a sentence, which is highly beneficial in communicating the semantics of the sentence, much more than constituency graphs, especially for languages with <b>free word order</b>, such as <b>Hindi</b> (English does not have a free word order, as most sentences are Subject-Verb-Object, and swapping them changes the meaning of the sentence).</p>
+            </section>
+
+            <section>
+                <h3>The Data Structure</h3>
+
+                <p>The core of the implementation is the Arc-Standard data structure. It is a combination of three other structures:</p>
+
+                <ul>
+                    <li>A "buffer" containing the unprocessed words of a sentence</li>
+                    <li>A stack containing the words in the sentence which have not been assigned a head</li>
+                    <li>A dependency graph where each node can have multiple left and right children</li>
+                </ul>
+
+                <p>Along with these structures, the Arc-Standard data structure has the following operations:</p>
+
+                <ul>
+                    <li><b>LEFT-ARC:</b> This assigns the top element of the stack as the head of the second-to-top element, and removes the second-to-top element from thd stack.</li>
+                    <li><b>RIGHT-ARC:</b> This assigns the second-to-top element of the stack as the head of the top element, and removes the top element from the stack.</li>
+                    <li><b>SHIFT:</b> This shifts the first element of the buffer to the stack.</li>
+                </ul>
+
+                <p>For the implementation specifically, the arc operations also assign the relations along with their corresponding dependency labels, such as "NMOD".</p>
+
+                <p>Then comes some special operations, which are required specifically for the implementation:</p>
+
+                <ul>
+                    <li><b>STACK_GET_LAST_N:</b> Gets the top <i>N</i> elements of the stack. If there are less than <i>N</i> elements in the stack, the missing elements are returned as "NULL".</li>
+                    <li><b>BUFFER_GET_LAST_N:</b> Same as STACK_GET_LAST_N, but for the buffer.</li>
+                    <li><b>GET_LEFTMOST_CHILD:</b> Returns the leftmost child of the specified node.</li>
+                    <li><b>GET_RIGHTMOST_CHILD:</b> Returns the rightmost child of the specified node.</li>
+                </ul>
+
+                <p>All in all, as soon as a word gets assigned its head, it is removed from the stack. The iteration ends when the buffer is empty and the stack only contains the ROOT node (since ROOT node is the only head without a head in a dependency graph).</p>
+
+                <p>The paper requires <i>N</i> (in the first two operations above) to be <b>3</b>, but I build a general method instead.</p>
+
+                <p>To train the model on data, we use something the paper calls the <b>Oracle</b>. The Oracle analyses the training data sentences and produces a sequence of operations which will produce the correct dependency tree for the sentence, by looking at the input dependency tree. In other words, it reverse-engineers the correct sequence of operations which produce the input dependency tree from the input sentence. The training loss is calculated against this correct sequence.</p>
+
+                <p>This algorithm is a <b>greedy</b> algorithm, and it cannot represnt non-projective trees i.e., dependency graphs with crossing edges, and I had to remove such sentences from my training dataset</p>
+            </section>
+
+            <section>
+                <h3>The Neural Network</h3>
+
+                <p>Let's now come to the most fun part (subectively)! The paper uses a feedforward neural network to train the dependency parser. The neural network has the following features:</p>
+
+                <ol>
+                    <li>The input layer has 2400 input neurons (as of the paper).</li>
+                    <li>The hidden layer has 200 neurons (as of the paper).</li>
+                    <li>The number of outputs is <i>2N<sub>l</sub> + 1</i>, where <i>N<sub>l</sub></i> is the number of labels in the label vocabulary. More on this later.</li>
+                    <li>The activation function chosen by the authors is f(x) = x<sup>3</sup>, which is an uncommon function for activation. More on this later.</li>
+                </ol>
+
+                <p>When processing, we have access to 3 types of data: words, tags and labels. Words are well, words of the sentence. Tags are the POS (Part-of-Speech) tags associated with the word. Labels are the dependency labels associated with the word. N<sub>w</sub>, N<sub>t</sub> and N<sub>l</sub> are the total number of words, tags and labels in the vocabulary, respectively.</p>
+
+                <p>For each training sample, we assemble three sets of data: S<sub>w</sub>, S<sub>t</sub> and S<sub>l</sub>. Here is what they contain:</p>
+
+                <ul>
+                    <li><b>S<sub>w</sub></b> contains the top 3 elements of the stack and the buffer. This is why I created the method <b>STACK_GET_LAST_N</b> and <b>BUFFER_GET_LAST_N</b>. It also contains the leftmost, rightmost, second leftmost and second rightmost children of the top 2 words on the stack. Finally, it contains the leftmost child of the leftmost child, and the rightmost child of the rightmost child of the top 2 words of the stack. This gives a total of <b>18</b> words.</li>
+
+                    <li><b>S<sub>t</sub></b> contains the tags associated with each of the words in S<sub>w</sub>, so <b>18</b> elements in total.</li>
+
+                    <li><b>S<sub>l</sub></b> contains the labels associated with each of the words in S<sub>w</sub>, excluding the top 3 words of the stack and the buffer, so <b>12</b> elements in total.</li>
+                </ul>
+
+                <p>The input for one sentence to the neural network is a concatenation of S<sub>w</sub>, S<sub>t</sub> and S<sub>l</sub>. This makes the input vector have 18 + 18 + 12 = <b>48</b> elements.</p>
+
+                <p>According to the original paper, the words, tags and labels are represented by 50-dimensional embeddings each. Hence, each word/tag/label has 50 elements associated with it. The input vector has 48 such elements. This makes the total elements in the input vector to be 48 x 50 = <b>2400</b>. Hence the reason we have 2400 input neurons.</p>
+
+                <p>According to the original paper, the tag and label embeddings are randomly initialized before training, and the embeddings are trained during the training process. On the contrary, the paper uses pre-trained word2vec skip-grams embeddings for the words, trained on massive Google News dataset.</p>
+
+                <p>There are <i>2N<sub>l</sub> + 1</i> outputs of the neural network. Each of the outputs correspond to an operation on the arc-standard dependency parser. There are <i>N<sub>l</sub></i> output logits corresponding to the probability of the operation being a <b>LEFT-ARC</b> operation, with each of the <i>N<sub>l</sub></i> labels as the arc label. The next <i>N<sub>l</sub></i> logits correspond to the probability of the operation being a <b>RIGHT-ARC</b> operation. The last logits corresponds to the probability of the operation being a <b>SHIFT</b> operation.</p>
+
+                <p>At the end, the model calculates a softmax over the output logits to calculate the probability of each of the operations.</p>
+
+                <p>Before applying softmax, we also mask out the illegal operations. We then calculate the loss using Cross Entropy, with the target as the decided operation by the Oracle for that iteration.</p>
+
+                <p>Something I did not go over yet is the choice of activation function i.e. f(x) = x<sup>3</sup>. The authors mention that since the function includes the term of x<sub>w</sub>x<sub>t</sub>x<sub>l</sub>, it does a good job of merging the information from each of the three sets, which benefits in the task of dependency parsing.</p>
+            </section>
+
+            <section>
+                <h3>My implementation</h3>
+
+                <p>Now that I have explained how the model works on a higher level (there are much more nuances mentioned in the original paper), I'd like to go over how I implemented the model.</p>
+
+                <h4>Data</h4>
+
+                <p>I did not have access to the proprietary Penn English Treebank (PTB) data, so I had to use UD English Treebank instead, which is significantly smaller and more chaotic than the Penn English Treebank.</p>
+
+                <p>For tags and labels, I used the data which came along with the UD Treebank's CoNLLU-formatted data.</p>
+
+                <h4>Arc-Standard data structure</h4>
+
+                <p>The first thing I implemented is the Arc-Standard data structure. I implemented all the structures using Python lists. Instead of removing elements from the buffer, I used a pointer which points at the current "top" element of the buffer, which increments with each SHIFT operation. This is done to avoid expensive O(n) remove operations.</p>
+
+                <p>The graph is implemented using two dictionaries, <code>left_children</code> and <code>right_children</code>, with keys as the node IDs and values as lists of their children.</p>
+
+                <h4>Neural Network</h4>
+
+                <p>The neural network is implemented using PyTorch's <code>nn.Module</code>. Nothing interesting here, just how it is done usually.</p>
+
+                <p>What <i>is</i> interesting though is that in the beginning, I kept the word embeddings as untrained, and trained them along with the model training process.</p>
+
+                <h4>Iterations</h4>
+
+                <p>Initially, I set the number of epochs to 5 and the learning rate to 0.001, and I used the Adam optimizer.</p>
+
+                <p>When I trained and evaluated the model the first time, I got a UAS of <b>75.12%</b>. This was good, but I wanted to see how far can I go near the paper's result of <b>91.8%</b>. I knew this was going to be hard since I had a disadvantage of a much smaller dataset.</p>
+
+                <p>I changed the dimensions of each of the embeddings to 100, instead of 50, which gave me a lower UAS of <b>74.38%</b>. The thing is that doubling the dimensions of the embeddings made the input layer have 100 x 48 = <b>4800</b> neurons, while the hidden layer stayed at 200. 4800 inputs couldn't efficiently "squeeze" into 200 hidden neurons, resulting in a worse result.</p>
+
+                <p>I increased the number of hidden neurons to 500 and the UAS immediately came out to be <b>76.92%</b>, which is an improvement over the initial result.</p>
+
+                <p>After some more iterations, I arrived at the configuration with 120 embedding dimensions and 720 neurons in the hidden layer, which gave me a UAS of <b>81.47%</b>.</p>
+
+                <p>At this point, I was quite happy, but also wanted to see how far I could take this.</p>
+
+                <p>I set the learning rate to 0.0001, applied <b>gradient clipping</b> so the loss could not suddenly explode, and set the number of epochs to 15. Keeping the embedding dimensions at 120 and the hidden neurons at 720, this gave me a UAS of <b>83.27%</b>.</p>
+
+                <p>However, I noticed that during my epochs, the loss sometimes increased in subsequent epochs, instead of decreasing. To battle this, I used a self-stopping training loop, which stops whenever a subsequent epoch has loss greater than the previous loss, and set the maximum number of epochs to 50. I also set the number of embedding dimensions to 125 and the number of hidden neurons to 725. This increased my UAS further to <b>83.71%</b>.</p>
+
+                <p>I then thought that stopping immediately upon noticing an increasing loss is way too harsh, so I used patience-based self-stopping training loop. The loss could exceed a maximum of 3 times before the training would stop. This further improved the UAS to <b>83.78%</b>.</p>
+
+                <p>At this point, there was not a lot of hyperparameter tuning I could do, so I decided to swap out my untrained word embedding matrix for GloVe's pre-trained embeddings. I used 100-dimensional GloVe embeddings, and rolled over the other embedding dimensions to 120 and the number of hidden neurons to 720, and incresed the patience level of the training loop from 3 to 5. This gave me a UAS of <b>84.43%</b>.</p>
+
+                <p>I then swapped the 100-dimensional GloVe embeddings for 300-dimensional GloVe embeddings, but after a lot of tuning, I couldn't get it to surpass the previous UAS of 84.43%, set by the 100-dimensional GloVe embeddings.</p>
+
+                <p>It is at this point I realised that my network was probably overfitting on the training dataset because of 300 embedding dimensions and the large number of hidden neurons, and hence it wasn't able to produce better results with the evaluation dataset. I swapped out the 300-dimensional GloVe embeddings with small, 50-dimensional GloVe embeddings and dropped down the dimensions of the tag and label embeddings to 50. I also dropped down the number of neurons in the hidden layer to 500. I also applied a dropout of 0.5 in the network to prevent any overfitting. All of this combined resulted in a UAS of <b>84.79%</b>.</p>
+
+                <p>Finally, I felt like a dropout of 0.5 was too harsh, so I reduced the dropout to 0.2, and increased the max number of epochs from 50 to 60, to get a final best UAS of <b>85.57%</b>.</p>
+            </section>
+
+            <section>
+                <h3>Conclusion</h3>
+
+                <p>So that is it! An 85.57% UAS score on a dependency parser. This was a really fun paper to implement and implementing it taught me a lot of things which merely reading the paper never could have. The code of the model, along with the exported weights can be found in this <a href="https://github.com/Sanyam-Asthana/Arc-Standard-Dependency-Parser">GitHub repository</a>. Farewell!</p>
+            </section>
+        </main>
+    </body>
+</html>

@@ -115,7 +115,7 @@
 
                 <p>To train the model on data, we use something the paper calls the <b>Oracle</b>. The Oracle analyses the training data sentences and produces a sequence of operations which will produce the correct dependency tree for the sentence, by looking at the input dependency tree. In other words, it reverse-engineers the correct sequence of operations which produce the input dependency tree from the input sentence. The training loss is calculated against this correct sequence.</p>
 
-                <p>This algorithm is a <b>greedy</b> algorithm, and it cannot represnt non-projective trees i.e., dependency graphs with crossing edges, and I had to remove such sentences from my training dataset</p>
+                <p>This algorithm is a <b>greedy</b> algorithm, and it cannot represent non-projective trees i.e., dependency graphs with crossing edges, and I had to remove such sentences from my training dataset</p>
             </section>
 
             <section>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="159.42039mm"
+   height="197.85603mm"
+   viewBox="0 0 159.4204 197.85604"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="multi-block.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.2756777"
+     inkscape:cx="161.09084"
+     inkscape:cy="401.74723"
+     inkscape:window-width="1470"
+     inkscape:window-height="808"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker13"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path13" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4" />
+    </marker>
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-41.534674,-81.369498)">
+    <rect
+       style="fill:#c87137;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1"
+       width="70.371208"
+       height="24.259031"
+       x="47.08316"
+       y="254.62273" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;display:inline;fill:#000000;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2"
+       transform="matrix(1.8974005,0,0,1.8229896,-60.75551,-191.16865)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan8">Token Sequence</tspan></text>
+    <rect
+       style="fill:#e25563;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-7"
+       width="70.371208"
+       height="24.259031"
+       x="130.24008"
+       y="188.55113" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:58.6198;display:inline;fill:#1a1a1a;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2-2"
+       transform="matrix(1.8974005,0,0,1.8229896,29.002124,-261.20083)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan9">Positional
+</tspan><tspan
+         x="62.383038"
+         y="256.48932"
+         id="tspan10">Embeddings</tspan></text>
+    <rect
+       style="fill:#0cc8fc;stroke:#000000;stroke-width:0.682877;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-0"
+       width="70.375862"
+       height="23.930004"
+       x="47.232121"
+       y="214.76471" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;display:inline;fill:#000004;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2-5"
+       transform="matrix(1.8974005,0,0,1.8229896,-64.893663,-231.159)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan11">Token Embeddings</tspan></text>
+    <rect
+       style="fill:#b48af9;fill-opacity:1;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-0-0"
+       width="70.371208"
+       height="24.259031"
+       x="47.283112"
+       y="137.03568" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;display:inline;fill:#1a1a1a;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2-5-7"
+       transform="matrix(1.8974005,0,0,1.8229896,-52.498733,-308.55728)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan12">Attention</tspan></text>
+    <rect
+       style="fill:#99cc33;fill-opacity:1;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-0-0-2"
+       width="70.371208"
+       height="24.259031"
+       x="47.228691"
+       y="90.385933" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:pre;inline-size:58.6198;display:inline;fill:#1a1a1a;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="91.69294"
+       y="252.52057"
+       id="text2-5-7-3"
+       transform="matrix(1.8974005,0,0,1.8229896,-89.925627,-359.21089)"><tspan
+         x="91.69294"
+         y="252.52057"
+         id="tspan16">Feed-Forward
+</tspan><tspan
+         x="91.69294"
+         y="256.48932"
+         id="tspan17">Neural Network</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.681665;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowTriangleStylized)"
+       d="m 82.203125,254.44659 -0.05109,-13.02605"
+       id="path2" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.728;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker6);marker-end:url(#marker5)"
+       d="M 81.815024,214.84406 81.623878,164.4972"
+       id="path3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.727712;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker8)"
+       d="m 81.917172,137.11939 -0.01364,-19.9182"
+       id="path7" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.686018;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 117.45424,266.57679 48.14186,-0.23704"
+       id="path10" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.686119;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 165.41134,212.8101 -0.0629,53.85471"
+       id="path11" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.673444;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker13)"
+       d="m 130.15048,200.8035 -45.914468,0.1891"
+       id="path12" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.59065px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0.0473702;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="100.27213"
+       y="197.54111"
+       id="text13"
+       transform="scale(0.99297745,1.0070722)"><tspan
+         id="tspan13"
+         style="stroke-width:0.0473702;stroke-dasharray:none"
+         x="100.27213"
+         y="197.54111">Add</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.876864;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       id="rect13"
+       width="81.285164"
+       height="98.333733"
+       x="41.973106"
+       y="81.80793" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.70027px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0.0772476;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="132.13263"
+       y="133.1416"
+       id="text14"
+       transform="scale(1.0082475,0.99181996)"><tspan
+         id="tspan14"
+         style="fill:#1a1a1a;stroke-width:0.0772476;stroke-dasharray:none"
+         x="132.13263"
+         y="133.1416">x n</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.41708px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;fill-opacity:1;stroke:#000000;stroke-width:0.199622;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="157.08249"
+       y="130.71858"
+       id="text15"
+       transform="scale(0.96598869,1.0352088)"><tspan
+         id="tspan15"
+         style="stroke-width:0.199622"
+         x="157.08249"
+         y="130.71858">blocks</tspan></text>
+  </g>
+</svg>

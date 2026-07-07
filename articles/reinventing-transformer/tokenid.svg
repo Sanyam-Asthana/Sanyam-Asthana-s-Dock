@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="110.60942mm"
+   height="13.545814mm"
+   viewBox="0 0 110.60942 13.545814"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="tokenid.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="110.60942"
+       height="13.545814"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-31.779427,-146.10774)">
+    <text
+       xml:space="preserve"
+       style="font-size:15.676px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.112957;stroke-miterlimit:4.3;stroke-dasharray:none"
+       x="30.445166"
+       y="157.1402"
+       id="text1"
+       transform="scale(0.99297923,1.0070704)"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#1a1a1a;stroke-width:0.112957;stroke-dasharray:none"
+         x="30.445166"
+         y="157.1402">house</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.2135px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.44767;stroke-miterlimit:4.3;stroke-dasharray:none"
+       x="124.23878"
+       y="151.54843"
+       id="text2"
+       transform="scale(0.95161739,1.0508425)"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="stroke-width:0.44767"
+         x="124.23878"
+         y="151.54843">520</tspan></text>
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.528649;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowTriangleStylized)"
+       d="m 85.136333,153.61331 24.622227,0.24413"
+       id="path3"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

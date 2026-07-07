@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.437439mm"
+   height="103.37582mm"
+   viewBox="0 0 71.437439 103.37582"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="embeddings.svg"
+   inkscape:export-xdpi="165.88985"
+   inkscape:export-ydpi="165.88985"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#000000"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.79291861"
+     inkscape:cx="334.83891"
+     inkscape:cy="672.20014"
+     inkscape:window-width="1470"
+     inkscape:window-height="923"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="71.437439"
+       height="103.37582"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="marker6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path6" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-70.902325,-168.44149)">
+    <rect
+       style="fill:#c87137;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1"
+       width="70.371208"
+       height="24.259031"
+       x="71.42485"
+       y="247.21449"
+       inkscape:export-filename="embeddings.svg"
+       inkscape:export-xdpi="128.56464"
+       inkscape:export-ydpi="128.56464" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;fill:#000000;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2"
+       transform="matrix(1.8974005,0,0,1.8229896,-36.413828,-198.57703)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan3">Token Sequence</tspan></text>
+    <rect
+       style="fill:#0cc8fc;stroke:#000000;stroke-width:0.682877;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-0"
+       width="70.375862"
+       height="23.930004"
+       x="71.243774"
+       y="209.48412" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;fill:#000004;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2-5"
+       transform="matrix(1.8974005,0,0,1.8229896,-40.882018,-236.43959)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan4">Token Embeddings</tspan></text>
+    <rect
+       style="fill:#b48af9;fill-opacity:1;stroke:#000000;stroke-width:0.687533;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none"
+       id="rect1-0-0"
+       width="70.371208"
+       height="24.259031"
+       x="71.624802"
+       y="168.78525" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;white-space:pre;inline-size:58.6198;fill:#1a1a1a;stroke:#000000;stroke-width:0.0280271;stroke-linecap:butt;stroke-miterlimit:4.3;stroke-dasharray:none;paint-order:normal"
+       x="62.383038"
+       y="252.52057"
+       id="text2-5-7"
+       transform="matrix(1.8974005,0,0,1.8229896,-28.157051,-276.80708)"><tspan
+         x="62.383038"
+         y="252.52057"
+         id="tspan5">Attention</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.672535;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ArrowTriangleStylized)"
+       d="m 106.55227,247.16897 -0.06,-10.79856"
+       id="path2"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0" />
+    <path
+       style="display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.640931;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-mid:url(#marker6);marker-end:url(#marker5)"
+       d="m 106.18597,209.73668 -0.22886,-14.20765"
+       id="path3"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="attention.svg"
+       inkscape:export-xdpi="414.72464"
+       inkscape:export-ydpi="414.72464" />
+  </g>
+</svg>

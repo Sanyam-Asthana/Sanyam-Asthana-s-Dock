@@ -62,7 +62,7 @@
      transform="translate(-31.779427,-146.10774)">
     <text
        xml:space="preserve"
-       style="font-size:15.676px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.112957;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:15.676px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.112957;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="30.445166"
        y="157.1402"
        id="text1"
@@ -74,7 +74,7 @@
          y="157.1402">house</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:14.2135px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.44767;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:14.2135px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.44767;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="124.23878"
        y="151.54843"
        id="text2"

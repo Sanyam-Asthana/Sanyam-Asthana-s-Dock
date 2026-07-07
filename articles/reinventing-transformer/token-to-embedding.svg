@@ -100,7 +100,7 @@
      transform="translate(-15.200789,-136.60891)">
     <text
        xml:space="preserve"
-       style="font-size:14.2135px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.44767;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:14.2135px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#000000;stroke-width:0.44767;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="17.689762"
        y="146.33"
        id="text2"
@@ -139,7 +139,7 @@
        id="path3-7-8-3" />
     <text
        xml:space="preserve"
-       style="font-size:5.56156px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:5.56156px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="69.460098"
        y="145.28665"
        id="text4"
@@ -151,7 +151,7 @@
          y="145.28665">0.53</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.56156px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:5.56156px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="87.85141"
        y="145.28665"
        id="text4-6"
@@ -163,7 +163,7 @@
          y="145.28665">0.74</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.56156px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:5.56156px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="106.39388"
        y="145.26105"
        id="text4-6-7"
@@ -175,7 +175,7 @@
          y="145.26105">0.21</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.56156px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:5.56156px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="124.87361"
        y="145.27347"
        id="text4-6-7-3"
@@ -187,7 +187,7 @@
          y="145.27347">0.82</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:5.56156px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:5.56156px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="195.77666"
        y="145.32739"
        id="text4-6-7-3-0"
@@ -199,7 +199,7 @@
          y="145.32739">0.13</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:9.74096px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.188982;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:9.74096px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.188982;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="155.30859"
        y="146.76123"
        id="text6"
@@ -211,7 +211,7 @@
          y="146.76123">...</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:6.97742px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:6.97742px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="120.27209"
        y="139.13387"
        id="text7"
@@ -223,7 +223,7 @@
          y="139.13387">n</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.175px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:3.175px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#000000;stroke:#1a1a1a;stroke-width:0.165;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="123.33971"
        y="142.24408"
        id="text8"><tspan
@@ -252,7 +252,7 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:7.06969px;font-family:'FiraCode Nerd Font';-inkscape-font-specification:'FiraCode Nerd Font';writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#1a1a1a;stroke-width:0.379647;stroke-miterlimit:4.3;stroke-dasharray:none"
+       style="font-size:7.06969px;font-family:monospace;-inkscape-font-specification:monospace;writing-mode:lr-tb;direction:ltr;fill:#1a1a1a;stroke:#1a1a1a;stroke-width:0.379647;stroke-miterlimit:4.3;stroke-dasharray:none"
        x="14.905349"
        y="158.77968"
        id="text12"

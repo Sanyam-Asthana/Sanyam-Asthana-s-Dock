@@ -88,7 +88,7 @@
                     <li><b>Dataset:</b> TinyStories</li>
                 </ul>
 
-                <p>The following few subsections are the code-blocks for building the transformer. You can skip <a href="#">ahead</a> if you want.</p>
+                <p>The following few subsections are the code-blocks for building the transformer. You can skip <a href="#interpretation">ahead</a> if you want.</p>
 
                 <h4>Importing modules</h4>
 
@@ -479,7 +479,7 @@ print(output)</code></pre>
                 <p>The completion we get for our prompt is: <code>John and Mary went to a park . John gave Mary a rose and told her that was a special gift . They had a very special</code>. Not a bad completion given the parameters we set!</p>
             </section>
 
-            <section>
+            <section id="interpretation">
                 <h3>Interpretation</h3>
 
                 <p>Now for the most fun part! We'll be analysing the model we just trained and interpreting what task its components carry out.</p>
@@ -528,7 +528,7 @@ cfg.stop_before_block = 4</code></pre>
 
                 <p>Performing this analysis on each token predicted by the model gives the following chart (you may want to open it in a new tab to get a better look):</p>
 
-                <img src="logit_lens.png" style="width: 100%;"/>
+                <img src="logit_lens.png" style="width: 100%;" alt="chart showing all predicted tokens after each block"/>
 
                 <p>Though this technique is really simple, there are indeed downsides to this. The bases of the matrix of the previous blocks can differ from the bases of the later blocks, and the unembedding matrix is trained according to the bases of the last block. This too, is a reason for the output to improve as we go further towards the final blocks of the model.</p>
 
@@ -614,7 +614,7 @@ plot_attention_patterns(model, tokenizer, prompt, layer_idx=2)</code></pre>
 
                 <p>This gives us the following plot(s):</p>
 
-                <img src="static_attention_heads.png" style="width: 100%;"/>
+                <img src="static_attention_heads.png" style="width: 100%;" alt="chart showing attention head visualizations of block 2"/>
 
                 <p>Though using the above code we can create static representations of our transformer blocks, we can also use an incredible library called <b>CircuitsVis</b> to create interactive web demos instead of static plots:</p>
 
@@ -640,7 +640,7 @@ plot_attention_patterns(model, tokenizer, prompt, layer_idx=2)</code></pre>
 
                 <p>Though we cannot spot an obvious induction head, it is still worth quantifying the findings:</p>
 
-                <img src="induction_head.png" style="width: 100%;"/>
+                <img src="induction_head.png" style="width: 100%;" alt="chart showing measure of induction head scores for each block and head"/>
 
                 <p>We now confirm that none of our heads have evolved into an induction head. This is expected, the primary reason being the model being too small for an intricate induction circuit to develop. There simply isn't much parameter bandwidth to allocate individual attention heads for this specialized task.</p>
 
@@ -648,7 +648,7 @@ plot_attention_patterns(model, tokenizer, prompt, layer_idx=2)</code></pre>
 
                 <p>Inspecting the attention patterns again, some heads in block 3 appear to be attending to previous tokens. Let's quantify this to confirm our hypothesis:</p>
 
-                <img src="previous_token_head.png" style="width: 100%;"/>
+                <img src="previous_token_head.png" style="width: 100%;" alt="chart showing measure of previous token head scores for each block and head"/>
 
                 <p>We see that Block 3 Head 5 is a strong contender for a previous token head and indeed, if we inspect its attention pattern in the interactive demo, we see that almost all tokens attend greatly to their previous tokens. Nice! One of our heads has evolved into a previous token head.</p>
 

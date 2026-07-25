@@ -110,7 +110,7 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
 
                 <details><summary>CODE</summary>
                 <pre><code class="language-python">class Config():
-    def __init__(self, d_model=132, n_ctx=256, n_blocks=4, n_heads=6, batch_size=128, n_vocab):
+    def __init__(self, d_model=132, n_ctx=256, n_blocks=4, n_heads=6, batch_size=128, n_vocab=4096):
         assert(d_model % n_heads == 0)
 
         self.d_model = d_model
@@ -136,6 +136,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
     def __init__(self, cfg: Config):
         super().__init__()
 
+        self.cfg = cfg
+
         self.W_Q = nn.Linear(cfg.d_model, cfg.d_model)
         self.W_K = nn.Linear(cfg.d_model, cfg.d_model)
         self.W_V = nn.Linear(cfg.d_model, cfg.d_model)
@@ -152,19 +154,19 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
         K = self.W_K(X)
         V = self.W_V(X)
 
-        Q = Q.view((B, T, cfg.n_heads, cfg.d_head))
-        K = K.view((B, T, cfg.n_heads, cfg.d_head))
-        V = V.view((B, T, cfg.n_heads, cfg.d_head))
+        Q = Q.view((B, T, self.cfg.n_heads, self.cfg.d_head))
+        K = K.view((B, T, self.cfg.n_heads, self.cfg.d_head))
+        V = V.view((B, T, self.cfg.n_heads, self.cfg.d_head))
 
         Q = Q.transpose(1, 2)
         K = K.transpose(1, 2)
         V = V.transpose(1, 2)
 
-        raw_scores = (Q @ K.transpose(-1, -2)) / torch.sqrt(torch.tensor(cfg.d_head))
+        raw_scores = (Q @ K.transpose(-1, -2)) / torch.sqrt(torch.tensor(self.cfg.d_head))
         masked_scores = raw_scores.masked_fill(self.mask[:T, :T] == 1, float('-inf'))
 
         attention = self.softmax(masked_scores) @ V
-        attention = attention.transpose(1, 2).contiguous().view((B, T, cfg.d_model))
+        attention = attention.transpose(1, 2).contiguous().view((B, T, self.cfg.d_model))
 
         return self.W_O(attention)</code></pre>
                 </details>
@@ -179,6 +181,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
                 <pre><code class="language-python">class MLP(nn.Module):
     def __init__(self, cfg: Config):
         super().__init__()
+
+        self.cfg = cfg
 
         self.layer1 = nn.Linear(cfg.d_model, cfg.d_mlp)
         self.layer2 = nn.Linear(cfg.d_mlp, cfg.d_model)
@@ -202,6 +206,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
                 <pre><code class="language-python">class LN(nn.Module):
     def __init__(self, cfg: Config):
         super().__init__()
+
+        self.cfg = cfg
 
         self.ϵ = 1e-5
 
@@ -228,6 +234,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
     def __init__(self, cfg: Config):
         super().__init__()
 
+        self.cfg = cfg
+
         self.mha = MHA(cfg)
         self.mlp = MLP(cfg)
         self.ln1 = LN(cfg)
@@ -251,6 +259,8 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
     def __init__(self, cfg: Config):
         super().__init__()
 
+        self.cfg = cfg
+
         self.W_E = nn.Embedding(cfg.n_vocab, cfg.d_model)
         self.W_U = nn.Linear(cfg.d_model, cfg.n_vocab)
 
@@ -266,12 +276,12 @@ from tokenizers import Tokenizer, models, trainers, pre_tokenizers</code></pre>
         positions = torch.arange(T).to(device)
         X = X + self.W_P(positions)
 
-        if cfg.training:
+        if self.cfg.training:
             for block in self.blocks:
                 X = block(X)
 
         else:
-            for block in self.blocks[0: cfg.stop_before_block]:
+            for block in self.blocks[0: self.cfg.stop_before_block]:
                 X = block(X)
 
         return self.W_U(X)</code></pre>

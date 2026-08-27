@@ -21,6 +21,17 @@
           ]
         }
         </script>
+
+        <style>
+            body {
+                margin-inline: auto;
+                max-width: 75ch;
+                padding-inline: 1.25rem;
+                line-height: 1.45;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            }
+        </style>
+
     </head>
     <body>
         <main>
@@ -37,6 +48,7 @@
             </nav>
 
             <hr>
+
 
             <section>
                 <h3>Introduction</h3>
@@ -56,6 +68,7 @@
                 <p><quote><i>"A full-stop is too small to stop a sentence, but the sentence still stops because the last word fears the capital letter on the other side."</i></quote>
                 <br>- Sanyam Asthana, a random thought before sleeping</p>
             </section>
+
 
             <section>
                 <h3>Socials</h3>
@@ -77,45 +90,13 @@
 
                 <details>
                     <summary>Where are your skills?</summary>
+
                     <p>Not the place for a CV. Better check my <a href="https://linkedin.com/in/sanyam-asthana">LinkedIn</a>.</p>
                 </details>
 
                 <details>
                     <summary>Where are your projects?</summary>
                     <p>Check out my <a href="https://github.com/Sanyam-Asthana">GitHub</a>.</p>
-                </details>
-
-                <details>
-                    <summary>This website is boring</summary>
-
-                <style contenteditable="true" spellcheck="false">
-body {
-    margin-inline: auto;
-    max-width: 75ch;
-    padding-inline: 1.25rem;
-    line-height: 1.45;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
-
-style[contenteditable="true"] {
-    display: block;
-    white-space: pre;
-    font-family: monospace;
-    font-size: 0.875rem;
-    background: #f4f4f5;
-    color: #18181b;
-    border: 1px solid #d4d4d8;
-    border-radius: 6px;
-    padding: 1rem;
-    outline: none;
-    overflow-x: auto;
-}
-
-style[contenteditable="true"]:focus {
-    border-color: #71717a;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
-}
-                </style>
                 </details>
             </section>
         </main>
